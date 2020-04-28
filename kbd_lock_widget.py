@@ -1,4 +1,5 @@
 import subprocess
+import os
 from libqtile.widget import base
 from libqtile import bar
 from libqtile.images import Img
