@@ -83,8 +83,11 @@ class KbdLockWidget(base._Widget, base.MarginMixin):
     def change_lock(self, lock):
         if lock:
             self.is_locked = True
+            subprocess.run(["xinput", "float", str(self.keyboard_device_id)])
         else:
             self.is_locked = False
+            subprocess.run(
+                ["xinput", "reattach", str(self.keyboard_device_id), str(self.keyboard_master_id)])
         self.draw()
 
     def cmd_lock(self):
