@@ -10,8 +10,10 @@ class KbdLockWidget(base._Widget, base.MarginMixin):
     defaults = [
         ("scale", True, "Enable/Disable image scaling"),
         ("rotate", 0.0, "rotate the image in degrees counter-clockwise"),
-        ("lock_icon", None, "Image filename. Can contain '~'"),
-        ("unlock_icon", None, "Image filename. Can contain '~'"),
+        ("lock_icon", None, "Lock icon filename. Can contain '~'"),
+        ("unlock_icon", None, "Unlock icon filename. Can contain '~'"),
+        ("keyboard_device_id", 0, "Keyboard id. Obtainable by xinput list"),
+        ("keyboard_master_id", 0, "Keyboard master id. Obtainable by xinput list"),
     ]
     def __init__(self, length=bar.CALCULATED, **config):
 
