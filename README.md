@@ -23,4 +23,4 @@ In terminal type xinput list and look at element with name similar to AT Transla
 You can toggle lock by clicking on icon in your bar or use qshell with commands lock, unlock and toggle.
 
 ## Known issues
-If your screen is being locked while your keyboard is locked you have no option to type your password and the only way to unlock your computer is reset.
+If your screen is being locked while your keyboard is locked you have no option to type your password and the only way to unlock your computer is reset. In my case I use xss-lock and betterlockscreen so I created a wrapper that executes "qtile-cmd -o widget kbdlockwidget -f unlock" before locking the screen.
