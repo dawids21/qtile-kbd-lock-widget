@@ -13,9 +13,11 @@ class KbdLockWidget(base._Widget, base.MarginMixin):
         ("rotate", 0.0, "rotate the image in degrees counter-clockwise"),
         ("lock_icon", None, "Lock icon filename. Can contain '~'"),
         ("unlock_icon", None, "Unlock icon filename. Can contain '~'"),
-        ("keyboard_device_name", "AT Translated Set 2 keyboard", "Keyboard name. Obtainable by xinput list"),
+        ("keyboard_device_name", "AT Translated Set 2 keyboard",
+         "Keyboard name. Obtainable by xinput list"),
         ("keyboard_master_id", 0, "Keyboard master id. Obtainable by xinput list"),
     ]
+
     def __init__(self, length=bar.CALCULATED, **config):
 
         base._Widget.__init__(self, length, **config)
@@ -59,7 +61,7 @@ class KbdLockWidget(base._Widget, base.MarginMixin):
             self.img_unlock.resize(width=new_width)
 
     def draw(self):
-        self.drawer.clear(self.bar.background)
+        self.drawer.clear(self.background or self.bar.background)
         self.drawer.ctx.save()
         self.drawer.ctx.translate(self.margin_x, self.margin_y)
         if self.is_locked:
